@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { TasksService } from './tasks.service';
 
+declare var UIkit: any;
+
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
@@ -11,11 +13,12 @@ import { TasksService } from './tasks.service';
 export class TasksComponent implements OnInit {
   private taskList;
   private newItem;
+  private currentPage = 1;
 
   constructor(private taskService: TasksService) { }
 
   getlist() {
-    return this.taskService.get().then(l => {
+    return this.taskService.get(this.currentPage).then(l => {
       this.taskList = l;
     });
   }
@@ -26,6 +29,26 @@ export class TasksComponent implements OnInit {
     }).then(() => {
       this.newItem = ''; // clear input form value
     });
+  }
+
+  deleteTask(id) {
+    this.taskService.delete(id).then(() => {
+      return this.getlist();
+    }).then(() => {
+      this.newItem = ''; // clear input form value
+    });
+  }
+
+  LastPage() {
+    if (this.currentPage !== 1) {
+      this.currentPage--;
+    }
+    return this.getlist();
+  }
+
+  NextPage() {
+    this.currentPage++;
+    return this.getlist();
   }
 
   ngOnInit() {
