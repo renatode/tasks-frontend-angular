@@ -1,0 +1,28 @@
+/* Import IUKIT  */
+@import "../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../node_modules/uikit/src/scss/mixins-theme.scss";
+@import "../node_modules/uikit/src/scss/uikit-theme.scss";
+
+/* "Reset" para algumas padronizacoes de navegador  */
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+  body{
+    -webkit-font-smoothing: antialiased !important;
+  }
+  body, input, button {
+    color: 222;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif
+  }
+  button {
+    cursor: pointer;
+  }
+/* Fim - "Reset" para algumas padronizacoes de navegador  */
