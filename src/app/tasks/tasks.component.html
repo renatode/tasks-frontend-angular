@@ -1,0 +1,14 @@
+<div class="uk-height-1-1 uk-background-muted">
+  <div class="uk-container uk-padding-large">
+    <div class="uk-block uk-block-large uk-background-default uk-padding-small myBlock">
+      <a href="#" (click)="addTask(task)" class="uk-icon-button adcionarTarefa" uk-icon="plus"></a>
+      <form action="">
+        <input type="text" name="inputNovaTarefa" id="inputNovaTarefa" class="uk-input" placeholder="Insira Nova Tarefa"
+          [(ngModel)]="newItem" (keyup.enter)="addTask()" autofocus />
+        <ul class="uk-list uk-padding-small uk-list-divider">
+          <li *ngFor="let task of taskList">{{task.task_name}}</li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>

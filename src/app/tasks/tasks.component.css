@@ -1,0 +1,17 @@
+.myBlock{
+  position: relative;
+}
+
+.adcionarTarefa{
+  position: absolute;
+  background:yellowgreen;
+  color: black;
+  font-weight: bold;
+  top: -15px;
+  right: -15px;
+}
+
+#inputNovaTarefa{
+  border: none;
+  border-bottom: 1px solid yellowgreen;
+}
